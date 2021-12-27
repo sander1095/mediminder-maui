@@ -12,10 +12,6 @@ namespace MediMinder
 		{
 			InitializeComponent();
 
-			//var tabbedPage = new MainPage();
-			//tabbedPage.Children.Add(new FooPage());
-			//tabbedPage.Children.Add(new FooPage());
-			////tabbedPage.Children.Add(new BarPage());
 			MainPage = new NavigationPage(new MainPage());
 		}
 	}

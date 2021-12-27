@@ -57,12 +57,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="AppShell.xaml.cs">
-	    <DependentUpon>AppShell.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Folder Include="Platforms\Pages\" />
 	</ItemGroup>
 
