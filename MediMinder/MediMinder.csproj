@@ -30,10 +30,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon
-			Include="Resources\appicon.svg"
-			ForegroundFile="Resources\appiconfg.svg"
-			Color="#512BD4" />
+		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
@@ -51,9 +48,46 @@
 		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.29-preview3" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Remove="NewFolder\**" />
+	  <EmbeddedResource Remove="NewFolder\**" />
+	  <MauiCss Remove="NewFolder\**" />
+	  <MauiXaml Remove="NewFolder\**" />
+	  <None Remove="NewFolder\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="AppShell.xaml.cs">
+	    <DependentUpon>AppShell.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Platforms\Pages\" />
+	</ItemGroup>
+
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<OutputType>WinExe</OutputType>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <_MauiXamlToRemove Remove="NewFolder\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\BarPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\DetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\FooPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
 	
 </Project>
