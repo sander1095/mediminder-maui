@@ -9,11 +9,19 @@
         <vm:MedicineListViewModel></vm:MedicineListViewModel>
     </ContentPage.BindingContext>
 	<ContentPage.Content>
-		<StackLayout>
-			<Label Text="Welcome to .NET MAUI!!!"
-			       HorizontalOptions="CenterAndExpand"
-			       TextColor="Purple"
-			       VerticalOptions="CenterAndExpand"/>
-		</StackLayout>
+        <ListView ItemsSource="{Binding MedicineList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Start">
+                                <Label Text="{Binding Name}"  VerticalOptions="Start" />
+                                <Label Text="{Binding Id}" VerticalOptions="End" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 	</ContentPage.Content>
 </ContentPage>
