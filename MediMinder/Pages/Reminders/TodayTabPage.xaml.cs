@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MediMinder.Pages
+namespace MediMinder.Pages.Reminders
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BarPage : ContentPage
+    public partial class TodayTabPage : ContentPage
     {
-        public BarPage()
+        public TodayTabPage()
         {
             InitializeComponent();
         }

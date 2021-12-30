@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 namespace MediMinder.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DetailPage : ContentPage
+    public partial class MedicineListPage : ContentPage
     {
-        public DetailPage()
+        public MedicineListPage()
         {
             InitializeComponent();
         }

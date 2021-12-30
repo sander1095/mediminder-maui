@@ -7,19 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MediMinder.Pages
+namespace MediMinder.Pages.Reminders
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FooPage : ContentPage
+    public partial class TomorrowTabPage : ContentPage
     {
-        public FooPage()
+        public TomorrowTabPage()
         {
             InitializeComponent();
-        }
-
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new DetailPage());
         }
     }
 }

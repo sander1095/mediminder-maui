@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui;
+﻿using MediMinder.Pages;
+using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Xaml;
 using System;
@@ -12,18 +13,16 @@ namespace MediMinder
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AppShell : Shell
     {
+        public DateOnly YesterdayDate { get; } = DateOnly.FromDateTime(DateTime.Now).AddDays(-1);
+        public DateOnly TodayDate { get; } = DateOnly.FromDateTime(DateTime.Now);
+        public DateOnly TomorrowDate { get; } = DateOnly.FromDateTime(DateTime.Now).AddDays(1);
+
+
         public AppShell()
         {
             InitializeComponent();
-        }
 
-        // UnComment the below method to handle Shell Menu item click event
-        // And ensure appropriate page definitions are available for it work as expected
-        /*
-        private async void OnMenuItemClicked(object sender, EventArgs e)
-        {
-            await Current.GoToAsync("//login");
+            BindingContext = this;
         }
-        */
     }
 }

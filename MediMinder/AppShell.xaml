@@ -1,13 +1,16 @@
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:pages="clr-namespace:MediMinder.Pages"
+       xmlns:reminderPages="clr-namespace:MediMinder.Pages.Reminders"
        x:Class="MediMinder.AppShell">
     <TabBar>
-        <Tab Title="Foo">
-            <ShellContent ContentTemplate="{DataTemplate pages:FooPage}"/>
+        <Tab Title="Reminders" CurrentItem="{x:Reference TodayTab}">
+            <ShellContent Title="{Binding YesterdayDate,StringFormat='{0:m}'}" ContentTemplate="{DataTemplate reminderPages:YesterdayTabPage}"/>
+            <ShellContent Title="{Binding TodayDate,StringFormat='{0:m}'}" x:Name="TodayTab" ContentTemplate="{DataTemplate reminderPages:TodayTabPage}"/>
+            <ShellContent Title="{Binding TomorrowDate,StringFormat='{0:m}'}" ContentTemplate="{DataTemplate reminderPages:TomorrowTabPage}"/>
         </Tab>
-        <Tab Title="Bar">
-            <ShellContent ContentTemplate="{DataTemplate pages:BarPage}"/>
+        <Tab Title="Medicine">
+            <ShellContent ContentTemplate="{DataTemplate pages:MedicineListPage}"/>
         </Tab>
     </TabBar>
 </Shell>
